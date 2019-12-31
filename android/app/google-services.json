@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "938106439713",
+    "firebase_url": "https://rediapp-5ae42.firebaseio.com",
+    "project_id": "rediapp-5ae42",
+    "storage_bucket": "rediapp-5ae42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938106439713:android:a57020801518d1bc947b60",
+        "android_client_info": {
+          "package_name": "com.example.redi_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "938106439713-e6f55c3ev5rn483kb9f6i1l2t790lps2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.redi_app",
+            "certificate_hash": "6c7b02f8df09da9c6c2fc11224e2cf43a860c769"
+          }
+        },
+        {
+          "client_id": "938106439713-8mitc97hm9gtnr4ofhoh92fn4lg8lgvs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd7ZNef1ezzoNYH3OgPHoo_8FURgoMFm8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "938106439713-8mitc97hm9gtnr4ofhoh92fn4lg8lgvs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
