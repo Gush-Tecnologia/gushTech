@@ -1,4 +1,4 @@
-class Aluno_Model {
+class AlunoModel {
 
   final String residencia ;
   final String nome;
@@ -7,6 +7,6 @@ class Aluno_Model {
   final String pontoGps;
 
 
-  Aluno_Model({this.residencia,this.nome,this.escola,this.serie,this.pontoGps});
+  AlunoModel({this.residencia,this.nome,this.escola,this.serie,this.pontoGps});
 
 }

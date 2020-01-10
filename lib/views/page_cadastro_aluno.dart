@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:redi_app/services/escolaList.dart';
 
 class PageCadastroAluno extends StatefulWidget {
   PageCadastroAluno({Key key, this.title}) : super(key: key);
@@ -44,6 +45,7 @@ class _PageCadastroAlunoState extends State<PageCadastroAluno> {
       controller: _nomeAlunoFieldController,
     );
 
+    final listaEscolas = EscolaList();
     final residenciaField = TextField(
       style: style,
       decoration: InputDecoration(

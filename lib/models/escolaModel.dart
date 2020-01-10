@@ -1,10 +1,10 @@
-class Escola_Model {
+class EscolaModel {
 
   
   final String nome;
   final String endereco ;
   final String localizacao;
 
-  Escola_Model({this.nome,this.endereco,this.localizacao});
+  EscolaModel({this.nome,this.endereco,this.localizacao});
 
 }

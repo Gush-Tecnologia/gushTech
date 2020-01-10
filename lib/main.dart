@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:redi_app/services/auth.dart';
 import 'package:redi_app/views/home.dart';
 
 void main() {
@@ -8,6 +10,11 @@ void main() {
     theme: ThemeData(primarySwatch: Colors.amber),
     home: MyHomePage(),
   ));
+}
+
+class _LoginData {
+  String email = '';
+  String password = '';
 }
 
 class MyHomePage extends StatefulWidget {
@@ -21,6 +28,19 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
+
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+  final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  _LoginData _data = new _LoginData();
+  final AuthImpl _auth = new Auth();
+
+  String _validatePassword(String value) {
+    if (value.length < 6) {
+      return 'Invalid password';
+    }
+
+    return null;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +83,36 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
 
+    final loginGoogle = Material(
+      elevation: 5.0,
+      borderRadius: BorderRadius.circular(30.0),
+      color: Colors.amber,
+      child: MaterialButton(
+        minWidth: MediaQuery.of(context).size.width,
+        padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+        onPressed: () async {
+          _auth.googleSignIn().then((FirebaseUser user) => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => List())));
+        },
+        child: Row(
+          children: <Widget>[
+            Image.asset(
+              'assets/google.png',
+              height: 24.0,
+            ),
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 40.0),
+              child: Text(
+                'Login com Google',
+                style: style.copyWith(
+                    color: Colors.white, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+
     return Scaffold(
         body: SingleChildScrollView(
       child: Center(
@@ -92,6 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 SizedBox(
                   height: 15.0,
                 ),
+                loginGoogle
               ],
             ),
           ),

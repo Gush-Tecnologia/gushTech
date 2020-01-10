@@ -1,4 +1,4 @@
-class Rota_Model {
+class RotaModel {
 
   final String nome;
   final String municipio;
@@ -17,7 +17,7 @@ class Rota_Model {
   final String tipoDeEstrada;
   final String observacoes;
 
-  Rota_Model(
+  RotaModel(
     {
      this.nome,
      this.municipio,
