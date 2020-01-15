@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:redi_app/views/page_cadastro_agente_de_campo.dart';
-import 'package:redi_app/views/page_cadastro_aluno.dart';
-import 'package:redi_app/views/page_cadastro_escola.dart';
-import 'package:redi_app/views/page_cadastro_fiscal_de_campo.dart';
-import 'package:redi_app/views/page_cadastro_motorista.dart';
-import 'package:redi_app/views/page_cadastro_rota.dart';
-import 'package:redi_app/views/page_cadastro_veiculo.dart';
+import 'package:provider/provider.dart';
+import 'package:redi_app/services/firebase_manager.dart';
+import 'package:redi_app/services/server_manager.dart';
+import 'package:redi_app/views/cadastros/page_cadastro_agente_de_campo.dart';
+import 'package:redi_app/views/cadastros/page_cadastro_aluno.dart';
+import 'package:redi_app/views/cadastros/page_cadastro_escola.dart';
+import 'package:redi_app/views/cadastros/page_cadastro_fiscal_de_campo.dart';
+import 'package:redi_app/views/cadastros/page_cadastro_motorista.dart';
+import 'package:redi_app/views/cadastros/page_cadastro_rota.dart';
+import 'package:redi_app/views/cadastros/page_cadastro_veiculo.dart';
 
+import '../controller_facade.dart';
 
+class HomePage extends StatelessWidget {
+  
 
-class List extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return bodyy( context);
-   
+    final controller = Provider.of<Controller>(context);
+    return body(context);
   }
-  Scaffold bodyy(BuildContext context){
-     final button1 = Material(
+
+  Scaffold body(BuildContext context) {
+    final button1 = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Colors.amber,
@@ -189,6 +195,5 @@ class List extends StatelessWidget {
           title: Text("Tela Inicial"),
         ),
         body: body);
-
   }
 }

@@ -1,17 +1,32 @@
-class AgenteDeCampo {
+import 'package:mobx/mobx.dart';
+part 'agenteDeCampo.g.dart';
 
-  final String cpf ;
-  final String nome;
-  final String email ;
-  final String senha;
+class AgenteDeCampo = _AgenteDeCampoBase with _$AgenteDeCampo;
 
-  AgenteDeCampo({this.cpf,this.nome,this.email,this.senha});
-  factory AgenteDeCampo.fromjson(Map json){
-    return AgenteDeCampo(
-      cpf: json['cpf'],
-      nome: json['nome'],
-      email:  json['email'],
-      senha:  json['senha']
-       );
-  }
+abstract class _AgenteDeCampoBase with Store {
+  @observable
+   String cpf ;
+  @action
+  mudarCpf(String value) => cpf = value;
+
+  @observable
+  String nome;
+  @action
+  mudarNome(String value) => nome = value;
+
+
+  @observable
+  String email ;
+  @action
+  mudarEmail(String value) => email = value;
+
+
+  @observable
+  String senha;
+  @action
+  mudarSenha(String value) => senha = value;
+
+
+
+
 }

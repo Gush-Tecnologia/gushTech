@@ -28,8 +28,13 @@ dependencies:
   google_sign_in: ^4.1.1
   cloud_firestore: ^0.12.9+6
   flutter_launcher_icons: ^0.7.4
+  mobx: ^0.4.0+1
+  flutter_mobx: ^0.3.6
+  provider: ^4.0.1
 
 dev_dependencies:
+  mobx_codegen:
+  build_runner: ^1.7.3
   flutter_test:
     sdk: flutter
 

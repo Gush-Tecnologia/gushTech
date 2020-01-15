@@ -142,7 +142,7 @@ class _PageCadastroAlunoState extends State<PageCadastroAluno> {
                 SizedBox(height: 25.0),
                 residenciaField,
                 SizedBox(height: 25.0),
-                escolaField,
+                listaEscolas,
                 SizedBox(height: 25.0),
                 serieField,
                 SizedBox(height: 25.0),
