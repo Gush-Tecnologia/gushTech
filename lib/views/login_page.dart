@@ -1,12 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:redi_app/services/auth.dart';
 import 'package:redi_app/services/firebase_manager.dart';
 import 'package:redi_app/services/server_manager.dart';
 import 'package:redi_app/views/home_page.dart';
 
-import '../controller_facade.dart';
 
 class LoginPage extends StatelessWidget {
   String _loginWithServer(String email, String password) {
@@ -19,13 +15,16 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
-    final controller = Provider.of<Controller>(context);
-    final GlobalKey<ScaffoldState> _scaffoldKey =
-        new GlobalKey<ScaffoldState>();
-    final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
-    _LoginData _data = new _LoginData();
-    final AuthImpl _auth = new Auth();
+
+    //final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
+
+    //final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+
+    //_LoginData _data = new _LoginData();
+
+    //final AuthImpl _auth = new Auth();
 
     final emailField = TextField(
       style: style,
@@ -74,8 +73,10 @@ class LoginPage extends StatelessWidget {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
-          _auth.googleSignIn().then((FirebaseUser user) => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomePage())));
+
+          /*_auth.googleSignIn().then((FirebaseUser user) => Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomePage())));*/
+              
         },
         child: Row(
           children: <Widget>[

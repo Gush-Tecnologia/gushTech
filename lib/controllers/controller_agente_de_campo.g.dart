@@ -15,24 +15,51 @@ mixin _$AgenteDeCampoController on _AgenteDeCampoControllerBase, Store {
   dynamic get isValidAgenteDeCampo => (_$isValidAgenteDeCampoComputed ??=
           Computed<dynamic>(() => super.isValidAgenteDeCampo))
       .value;
-  Computed<dynamic> _$nomeComputed;
+
+  final _$_AgenteDeCampoControllerBaseActionController =
+      ActionController(name: '_AgenteDeCampoControllerBase');
 
   @override
-  dynamic get nome =>
-      (_$nomeComputed ??= Computed<dynamic>(() => super.nome)).value;
-  Computed<dynamic> _$emailComputed;
+  dynamic mudarNome(String value) {
+    final _$actionInfo =
+        _$_AgenteDeCampoControllerBaseActionController.startAction();
+    try {
+      return super.mudarNome(value);
+    } finally {
+      _$_AgenteDeCampoControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
-  dynamic get email =>
-      (_$emailComputed ??= Computed<dynamic>(() => super.email)).value;
-  Computed<dynamic> _$cpfComputed;
+  dynamic mudarCpf(String value) {
+    final _$actionInfo =
+        _$_AgenteDeCampoControllerBaseActionController.startAction();
+    try {
+      return super.mudarCpf(value);
+    } finally {
+      _$_AgenteDeCampoControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
-  dynamic get cpf =>
-      (_$cpfComputed ??= Computed<dynamic>(() => super.cpf)).value;
-  Computed<dynamic> _$senhaComputed;
+  dynamic mudarEmail(String value) {
+    final _$actionInfo =
+        _$_AgenteDeCampoControllerBaseActionController.startAction();
+    try {
+      return super.mudarEmail(value);
+    } finally {
+      _$_AgenteDeCampoControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
 
   @override
-  dynamic get senha =>
-      (_$senhaComputed ??= Computed<dynamic>(() => super.senha)).value;
+  dynamic mudarSenha(String value) {
+    final _$actionInfo =
+        _$_AgenteDeCampoControllerBaseActionController.startAction();
+    try {
+      return super.mudarSenha(value);
+    } finally {
+      _$_AgenteDeCampoControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
 }

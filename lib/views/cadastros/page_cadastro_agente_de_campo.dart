@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
-
-import '../../controller_facade.dart';
+import 'package:redi_app/controllers/controller_agente_de_campo.dart';
 
 class PageCadastroAgenteDeCampo extends StatefulWidget {
   PageCadastroAgenteDeCampo({Key key, this.title}) : super(key: key);
@@ -15,6 +14,8 @@ class PageCadastroAgenteDeCampo extends StatefulWidget {
 }
 
 class _PageCadastroAgenteDeCampoState extends State<PageCadastroAgenteDeCampo> {
+  
+  
   Firestore db = Firestore.instance;
   Future<DocumentSnapshot> _salvar(
       String nome, String email, String cpf, String senha) async {
@@ -25,7 +26,7 @@ class _PageCadastroAgenteDeCampoState extends State<PageCadastroAgenteDeCampo> {
 
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
 
-  Future<DocumentSnapshot> _listaAgentes() async {
+  /*Future<DocumentSnapshot> _listaAgentes() async {
     StreamBuilder<QuerySnapshot>(
       stream: Firestore.instance.collection('agenteDeCampo').snapshots(),
       builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -46,10 +47,9 @@ class _PageCadastroAgenteDeCampoState extends State<PageCadastroAgenteDeCampo> {
         }
       },
     );
-  }
+  }*/
 
-  _textField(
-      {String labelText, hintText, onChanged, String Function() errorText}) {
+  _textField({String labelText, hintText, onChanged, String Function() errorText}) {
     return TextField(
       onChanged: onChanged,
       decoration: InputDecoration(
@@ -81,7 +81,8 @@ class _PageCadastroAgenteDeCampoState extends State<PageCadastroAgenteDeCampo> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<Controller>(context);
+    final controller = Provider.of<AgenteDeCampoController>(context);
+    
     final espaco = SizedBox(height: 15.0);
     final espaco0 = SizedBox(height: 25.0);
     final espaco1 = SizedBox(height: 35.0);
@@ -102,44 +103,43 @@ class _PageCadastroAgenteDeCampoState extends State<PageCadastroAgenteDeCampo> {
                 Observer(
                   builder: (_) {
                     return _textField(
-                        errorText: controller.agenteDeCampo.validaNome,
+                        errorText: controller.validaNome,
                         labelText: "Nome",
                         hintText: "Nome do Agente de Campo",
-                        onChanged:
-                            controller.agenteDeCampo.agenteDeCampo.mudarNome);
+                        onChanged: controller.mudarNome);
                   },
                 ),
                 espaco0,
                 Observer(
                   builder: (_) {
                     return _textField(
-                        errorText: controller.agenteDeCampo.validaCpf,
+                        errorText: controller.validaCpf,
                         labelText: "CPF",
                         hintText: "CPF do Agente de Campo",
                         onChanged:
-                            controller.agenteDeCampo.agenteDeCampo.mudarCpf);
+                            controller.mudarCpf);
                   },
                 ),
                 espaco0,
                 Observer(
                   builder: (_) {
                     return _textField(
-                        errorText: controller.agenteDeCampo.validaEmail,
+                        errorText: controller.validaEmail,
                         labelText: "Email",
                         hintText: "Email do Agente de Campo",
                         onChanged:
-                            controller.agenteDeCampo.agenteDeCampo.mudarEmail);
+                            controller.mudarEmail);
                   },
                 ),
                 espaco0,
                 Observer(
                   builder: (_) {
                     return _textField(
-                        errorText: controller.agenteDeCampo.validaNome,
+                        errorText: controller.validaNome,
                         labelText: "Senha",
                         hintText: "Senha do Agente de Campo",
                         onChanged:
-                            controller.agenteDeCampo.agenteDeCampo.mudarSenha);
+                            controller.mudarSenha);
                   },
                 ),
                 espaco1,
@@ -147,7 +147,7 @@ class _PageCadastroAgenteDeCampoState extends State<PageCadastroAgenteDeCampo> {
                   builder: (_) {
                     return _materialButton(
                       labelText: "Confimar",
-                      onPressed: controller.agenteDeCampo.isValidAgenteDeCampo
+                      onPressed: controller.isValidAgenteDeCampo
                           ? () async {
                               await _salvar(
                                   controller.agenteDeCampo.nome,
@@ -164,11 +164,11 @@ class _PageCadastroAgenteDeCampoState extends State<PageCadastroAgenteDeCampo> {
                   builder: (_) {
                     return _materialButton(
                       labelText: "Lista",
-                      onPressed: controller.agenteDeCampo.isValidAgenteDeCampo
+                      onPressed: (){}/*controller.isValidAgenteDeCampo
                           ? () async {
                               await _listaAgentes();
                             }
-                          : null,
+                          : null,*/
                     );
                   },
                 ),

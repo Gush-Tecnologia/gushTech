@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:redi_app/services/firebase_manager.dart';
-import 'package:redi_app/services/server_manager.dart';
+import 'package:redi_app/controllers/controller_agente_de_campo.dart';
 import 'package:redi_app/views/cadastros/page_cadastro_agente_de_campo.dart';
 import 'package:redi_app/views/cadastros/page_cadastro_aluno.dart';
 import 'package:redi_app/views/cadastros/page_cadastro_escola.dart';
@@ -10,14 +9,13 @@ import 'package:redi_app/views/cadastros/page_cadastro_motorista.dart';
 import 'package:redi_app/views/cadastros/page_cadastro_rota.dart';
 import 'package:redi_app/views/cadastros/page_cadastro_veiculo.dart';
 
-import '../controller_facade.dart';
 
 class HomePage extends StatelessWidget {
   
 
   @override
   Widget build(BuildContext context) {
-    final controller = Provider.of<Controller>(context);
+    final controller = Provider.of<AgenteDeCampoController>(context);
     return body(context);
   }
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user.dart';
+part of 'loginModel.dart';
 
 // **************************************************************************
 // StoreGenerator
@@ -8,8 +8,8 @@ part of 'user.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$User on _UserBase, Store {
-  final _$emailAtom = Atom(name: '_UserBase.email');
+mixin _$LoginModel on _LoginModelBase, Store {
+  final _$emailAtom = Atom(name: '_LoginModelBase.email');
 
   @override
   String get email {
@@ -26,42 +26,43 @@ mixin _$User on _UserBase, Store {
     }, _$emailAtom, name: '${_$emailAtom.name}_set');
   }
 
-  final _$passwordAtom = Atom(name: '_UserBase.password');
+  final _$senhaAtom = Atom(name: '_LoginModelBase.senha');
 
   @override
-  String get password {
-    _$passwordAtom.context.enforceReadPolicy(_$passwordAtom);
-    _$passwordAtom.reportObserved();
-    return super.password;
+  String get senha {
+    _$senhaAtom.context.enforceReadPolicy(_$senhaAtom);
+    _$senhaAtom.reportObserved();
+    return super.senha;
   }
 
   @override
-  set password(String value) {
-    _$passwordAtom.context.conditionallyRunInAction(() {
-      super.password = value;
-      _$passwordAtom.reportChanged();
-    }, _$passwordAtom, name: '${_$passwordAtom.name}_set');
+  set senha(String value) {
+    _$senhaAtom.context.conditionallyRunInAction(() {
+      super.senha = value;
+      _$senhaAtom.reportChanged();
+    }, _$senhaAtom, name: '${_$senhaAtom.name}_set');
   }
 
-  final _$_UserBaseActionController = ActionController(name: '_UserBase');
+  final _$_LoginModelBaseActionController =
+      ActionController(name: '_LoginModelBase');
 
   @override
   dynamic mudarEmail(String value) {
-    final _$actionInfo = _$_UserBaseActionController.startAction();
+    final _$actionInfo = _$_LoginModelBaseActionController.startAction();
     try {
       return super.mudarEmail(value);
     } finally {
-      _$_UserBaseActionController.endAction(_$actionInfo);
+      _$_LoginModelBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
-  dynamic mudarPassword(String value) {
-    final _$actionInfo = _$_UserBaseActionController.startAction();
+  dynamic mudarSenha(String value) {
+    final _$actionInfo = _$_LoginModelBaseActionController.startAction();
     try {
-      return super.mudarPassword(value);
+      return super.mudarSenha(value);
     } finally {
-      _$_UserBaseActionController.endAction(_$actionInfo);
+      _$_LoginModelBaseActionController.endAction(_$actionInfo);
     }
   }
 }

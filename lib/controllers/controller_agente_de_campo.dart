@@ -16,34 +16,14 @@ abstract class _AgenteDeCampoControllerBase with Store {
     return validaNome() == null && validaEmail() == null;
   }
 
-  @computed
-  set mudarNome(String value) => agenteDeCampo.mudarNome(value);
-  @computed
-  set mudarCpf(String value) => agenteDeCampo.mudarCpf(value);
-  @computed
-  set mudarEmail(String value) => agenteDeCampo.mudarEmail(value);
-  @computed
-  set mudarSenha(String value) => agenteDeCampo.mudarSenha(value);
-
-  @computed
-  get nome {
-    return agenteDeCampo.nome;
-  }
-
-  @computed
-  get email {
-    return agenteDeCampo.email;
-  }
-
-  @computed
-  get cpf {
-    return agenteDeCampo.cpf;
-  }
-
-  @computed
-  get senha {
-    return agenteDeCampo.senha;
-  }
+  @action
+  mudarNome(String value) => agenteDeCampo.mudarNome(value);
+  @action
+  mudarCpf(String value) => agenteDeCampo.mudarCpf(value);
+  @action
+  mudarEmail(String value) => agenteDeCampo.mudarEmail(value);
+  @action
+  mudarSenha(String value) => agenteDeCampo.mudarSenha(value);
 
   String validaNome() {
     if (agenteDeCampo.nome == null || agenteDeCampo.nome.isEmpty) {
@@ -80,4 +60,5 @@ abstract class _AgenteDeCampoControllerBase with Store {
     }
     return null;
   }
+  dispose(){}
 }
